@@ -4,7 +4,14 @@ name = "minimal-versions"
 publish = false
 version = "0.0.0"
 
+[features]
+default = ["tls-rustls"]
+tls-rustls = ["axum-server-dual-protocol2/default", "dep:aws-lc-rs"]
+
 [dependencies]
-axum-server-dual-protocol = { path = ".." }
-# `tower` v0.4.0 incorrectly only requires `tower-layer` v0.3.0
-tower-layer = "0.3.1"
+axum-server-dual-protocol2 = { path = "..", default-features = false }
+# `aws-lc-sys` versions before 0.28 use `cmake_minimum_required(VERSION 3.0)`,
+# which CMake 4 no longer accepts. `aws-lc-rs` 1.13 pulls in 0.28.
+aws-lc-rs = { version = "1.13", optional = true }
+# `tower` v0.5.0 incorrectly only requires `tower-layer` v0.3.0
+tower-layer = "0.3.3"
