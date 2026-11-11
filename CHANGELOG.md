@@ -15,6 +15,11 @@ upstream project is unmaintained.
 
 - [`TlsInfo`](https://docs.rs/axum-server/latest/axum_server/tls/struct.TlsInfo.html) is now added to
   the extensions of requests on encrypted connections.
+- Added the `tls-rustls-ring` feature, which enables the
+  [`ring`](https://docs.rs/ring/0.17)
+  [`CryptoProvider`](https://docs.rs/rustls/0.23/rustls/crypto/struct.CryptoProvider.html) instead of
+  [`aws-lc-rs`](https://docs.rs/aws-lc-rs/1). When both providers are enabled,
+  [`aws-lc-rs`](https://docs.rs/aws-lc-rs/1) is used.
 
 ### Changed
 
@@ -22,6 +27,7 @@ upstream project is unmaintained.
 - Updated `axum` to v0.8.
 - Increased MSRV to v1.82.
 - The default feature now also enables TLS 1.2, matching `axum-server`.
+- Dropped the `rcgen` Git patch, the crates.io release works for the tests.
 
 ### Changed (breaking)
 

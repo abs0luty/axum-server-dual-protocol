@@ -16,10 +16,11 @@ rust-version = "1.82"
 version = "0.8.0"
 
 [features]
-default = ["rustls/aws-lc-rs", "rustls/tls12"]
+default = ["axum-server/tls-rustls"]
+tls-rustls-ring = ["axum-server/tls-rustls-ring"]
 
 [dependencies]
-axum-server = { version = "0.9", default-features = false, features = ["tls-rustls-no-provider"] }
+axum-server = { version = "0.9.2", default-features = false, features = ["tls-rustls-no-provider"] }
 bytes = { version = "1", default-features = false }
 http = "1"
 http-body-util = "0.1"

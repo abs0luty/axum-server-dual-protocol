@@ -12,7 +12,26 @@ use futures_util::{future, TryFutureExt};
 use http::{Request, Response};
 use hyper::body::{Body, Incoming};
 use reqwest::Certificate;
+#[cfg(not(feature = "tls-rustls-ring"))]
+use rustls::crypto::aws_lc_rs;
+#[cfg(feature = "tls-rustls-ring")]
+use rustls::crypto::ring;
 use tower_service::Service;
+
+/// Install the provider the feature flags select.
+///
+/// The `rustls` dev-dependency always enables `aws-lc-rs`, so with
+/// `tls-rustls-ring` both providers are compiled in and rustls refuses to pick
+/// one on its own.
+fn install_crypto_provider() {
+	#[cfg(feature = "tls-rustls-ring")]
+	let provider = ring::default_provider();
+
+	#[cfg(not(feature = "tls-rustls-ring"))]
+	let provider = aws_lc_rs::default_provider();
+
+	let _ = provider.install_default();
+}
 
 #[expect(
 	clippy::unnecessary_wraps,
@@ -56,6 +75,8 @@ where
 	ClientFn: 'static + FnOnce(Certificate, SocketAddr) -> ClientFuture + Send,
 	ClientFuture: Future<Output = Result<()>> + Send,
 {
+	install_crypto_provider();
+
 	let handle = Handle::new();
 
 	let key_pair = rcgen::generate_simple_self_signed([String::from("localhost")])?;

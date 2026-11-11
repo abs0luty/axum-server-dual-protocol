@@ -94,6 +94,12 @@
 //!
 //! By default the [`aws-lc-rs`] [`CryptoProvider`] is enabled.
 //!
+//! ## `tls-rustls-ring`
+//!
+//! Enables the [`ring`] [`CryptoProvider`] instead of [`aws-lc-rs`]. Enable it
+//! with `default-features = false`. When both providers are enabled,
+//! [`aws-lc-rs`] is used.
+//!
 //! # Conditional Configurations
 //!
 //! ## `docsrs`
@@ -135,6 +141,7 @@
 //! [`axum-server`]: https://docs.rs/axum-server/latest
 //! [`CryptoProvider`]: tokio_rustls::rustls::crypto::CryptoProvider
 //! [`hyper`]: https://docs.rs/hyper/1
+//! [`ring`]: https://docs.rs/ring/0.17
 //! [`Router`]: https://docs.rs/axum/0.8/axum/struct.Router.html
 //! [`tower`]: https://docs.rs/tower/0.5
 

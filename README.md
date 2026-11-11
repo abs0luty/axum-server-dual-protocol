@@ -76,6 +76,11 @@ let app = Router::new()
 
 By default the [`aws-lc-rs`] [`CryptoProvider`] is enabled.
 
+### `tls-rustls-ring`
+
+Enables the [`ring`] [`CryptoProvider`] instead of [`aws-lc-rs`]. Enable it with
+`default-features = false`. When both providers are enabled, [`aws-lc-rs`] is used.
+
 ## Conditional Configurations
 
 ### `docsrs`
@@ -119,6 +124,7 @@ additional terms or conditions.
 [`CryptoProvider`]: https://docs.rs/rustls/0.23/rustls/crypto/struct.CryptoProvider.html
 [`hyper`]: https://docs.rs/hyper/1
 [`Layer`]: https://docs.rs/tower-layer/0.3/tower_layer/trait.Layer.html
+[`ring`]: https://docs.rs/ring/0.17
 [`Router`]: https://docs.rs/axum/0.8/axum/struct.Router.html
 [`ServerExt::set_upgrade()`]:
 	https://abs0luty.github.io/axum-server-dual-protocol/axum_server_dual_protocol/trait.ServerExt.html#tymethod.set_upgrade

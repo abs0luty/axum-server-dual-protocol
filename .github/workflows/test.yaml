@@ -27,6 +27,10 @@ jobs:
         features:
           - { description: "", features: "" }
           - { description: " (no default features)", features: "--no-default-features" }
+          - {
+              description: " (tls-rustls-ring)",
+              features: "--no-default-features --features tls-rustls-ring",
+            }
 
     steps:
       - name: Checkout
