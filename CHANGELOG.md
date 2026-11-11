@@ -23,6 +23,8 @@ upstream project is unmaintained.
 
 ### Changed
 
+- Published as `axum-server-dual-protocol2` because the upstream crate name is taken. The library
+  target is still named `axum_server_dual_protocol`, so existing `use` statements keep working.
 - Updated `axum-server` to v0.9.
 - Updated `axum` to v0.8.
 - Increased MSRV to v1.82.

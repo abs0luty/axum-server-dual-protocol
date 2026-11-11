@@ -1,12 +1,16 @@
-# axum-server-dual-protocol
+# axum-server-dual-protocol2
 
 > **Maintained fork.** Upstream
 > [`daxpedda/axum-server-dual-protocol`](https://github.com/daxpedda/axum-server-dual-protocol) is
-> unmaintained. This fork lives at
-> [`abs0luty/axum-server-dual-protocol`](https://github.com/abs0luty/axum-server-dual-protocol) and
-> tracks [`axum-server`] v0.9.
+> unmaintained. This fork is published as `axum-server-dual-protocol2` (the upstream crate name is
+> taken) and lives at
+> [`abs0luty/axum-server-dual-protocol`](https://github.com/abs0luty/axum-server-dual-protocol),
+> tracking [`axum-server`] v0.9. The library target keeps the name
+> `axum_server_dual_protocol`, so existing `use` statements work unchanged.
 
+[![Crates.io Version](https://img.shields.io/crates/v/axum-server-dual-protocol2.svg)](https://crates.io/crates/axum-server-dual-protocol2)
 [![Live Build Status](https://img.shields.io/github/check-runs/abs0luty/axum-server-dual-protocol/main?label=CI)](https://github.com/abs0luty/axum-server-dual-protocol/actions?query=branch%3Amain)
+[![Docs.rs Documentation](https://img.shields.io/docsrs/axum-server-dual-protocol2?label=docs.rs)](https://docs.rs/crate/axum-server-dual-protocol2)
 [![Main Documentation](https://img.shields.io/github/actions/workflow/status/abs0luty/axum-server-dual-protocol/documentation.yaml?branch=main&label=main%20docs)](https://abs0luty.github.io/axum-server-dual-protocol/axum_server_dual_protocol/index.html)
 
 ## Description
@@ -20,11 +24,14 @@ connection reset error. See [`ServerExt::set_upgrade()`].
 
 ## Installation
 
-This fork is not published on crates.io under the upstream crate name, so depend on it through Git:
+```bash
+cargo add axum-server-dual-protocol2
+```
 
-```toml
-[dependencies]
-axum-server-dual-protocol = { git = "https://github.com/abs0luty/axum-server-dual-protocol" }
+The library target is still called `axum_server_dual_protocol`, so existing code keeps compiling:
+
+```rust
+use axum_server_dual_protocol::bind_dual_protocol;
 ```
 
 ## Usage

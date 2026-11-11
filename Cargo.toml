@@ -10,10 +10,13 @@ edition = "2021"
 include = ["CHANGELOG.md", "examples/**/*", "LICENSE-*", "src/**/*"]
 keywords = ["axum-server", "server", "web", "http", "https"]
 license = "MIT OR Apache-2.0"
-name = "axum-server-dual-protocol"
+name = "axum-server-dual-protocol2"
 repository = "https://github.com/abs0luty/axum-server-dual-protocol"
 rust-version = "1.82"
 version = "0.8.0"
+
+[lib]
+name = "axum_server_dual_protocol"
 
 [features]
 default = ["axum-server/tls-rustls"]
