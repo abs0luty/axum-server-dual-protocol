@@ -11,7 +11,7 @@ include = ["CHANGELOG.md", "examples/**/*", "LICENSE-*", "src/**/*"]
 keywords = ["axum-server", "server", "web", "http", "https"]
 license = "MIT OR Apache-2.0"
 name = "axum-server-dual-protocol"
-repository = "https://github.com/daxpedda/axum-server-dual-protocol"
+repository = "https://github.com/abs0luty/axum-server-dual-protocol"
 rust-version = "1.82"
 version = "0.8.0"
 
@@ -42,9 +42,6 @@ reqwest = { version = "0.12", default-features = false, features = [
 ] }
 rustls = { version = "0.23", features = ["aws-lc-rs"] }
 tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
-
-[patch.crates-io]
-rcgen = { git = "https://github.com/daxpedda/rcgen", branch = "aws-lc-rs-default-features" }
 
 [[test]]
 name = "util"

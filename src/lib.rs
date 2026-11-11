@@ -1,5 +1,9 @@
 //! # Description
 //!
+//! Maintained fork of the unmaintained
+//! [`daxpedda/axum-server-dual-protocol`](https://github.com/daxpedda/axum-server-dual-protocol),
+//! tracking [`axum-server`] v0.9.
+//!
 //! Provides utilities to host a [`axum-server`](axum_server) server that
 //! accepts the HTTP and HTTPS protocol on the same port. See
 //! [`bind_dual_protocol()`].
@@ -123,9 +127,9 @@
 //! license, shall be dual licensed as above, without any additional terms or
 //! conditions.
 //!
-//! [CHANGELOG]: https://github.com/daxpedda/axum-server-dual-protocol/blob/v0.8.0/CHANGELOG.md
-//! [LICENSE-MIT]: https://github.com/daxpedda/axum-server-dual-protocol/blob/v0.8.0/LICENSE-MIT
-//! [LICENSE-APACHE]: https://github.com/daxpedda/axum-server-dual-protocol/blob/v0.8.0/LICENSE-APACHE
+//! [CHANGELOG]: https://github.com/abs0luty/axum-server-dual-protocol/blob/main/CHANGELOG.md
+//! [LICENSE-MIT]: https://github.com/abs0luty/axum-server-dual-protocol/blob/main/LICENSE-MIT
+//! [LICENSE-APACHE]: https://github.com/abs0luty/axum-server-dual-protocol/blob/main/LICENSE-APACHE
 //! [`aws-lc-rs`]: https://docs.rs/aws-lc-rs/1
 //! [`axum`]: https://docs.rs/axum/0.8
 //! [`axum-server`]: https://docs.rs/axum-server/latest

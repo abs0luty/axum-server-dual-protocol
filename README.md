@@ -1,9 +1,13 @@
 # axum-server-dual-protocol
 
-[![Crates.io Version](https://img.shields.io/crates/v/axum-server-dual-protocol.svg)](https://crates.io/crates/axum-server-dual-protocol)
-[![Live Build Status](https://img.shields.io/github/check-runs/daxpedda/axum-server-dual-protocol/main?label=CI)](https://github.com/daxpedda/axum-server-dual-protocol/actions?query=branch%3Amain)
-[![Docs.rs Documentation](https://img.shields.io/docsrs/axum-server-dual-protocol?label=docs.rs)](https://docs.rs/crate/axum-server-dual-protocol)
-[![Main Documentation](https://img.shields.io/github/actions/workflow/status/daxpedda/axum-server-dual-protocol/documentation.yaml?branch=main&label=main%20docs)](https://daxpedda.github.io/axum-server-dual-protocol/axum_server_dual_protocol/index.html)
+> **Maintained fork.** Upstream
+> [`daxpedda/axum-server-dual-protocol`](https://github.com/daxpedda/axum-server-dual-protocol) is
+> unmaintained. This fork lives at
+> [`abs0luty/axum-server-dual-protocol`](https://github.com/abs0luty/axum-server-dual-protocol) and
+> tracks [`axum-server`] v0.9.
+
+[![Live Build Status](https://img.shields.io/github/check-runs/abs0luty/axum-server-dual-protocol/main?label=CI)](https://github.com/abs0luty/axum-server-dual-protocol/actions?query=branch%3Amain)
+[![Main Documentation](https://img.shields.io/github/actions/workflow/status/abs0luty/axum-server-dual-protocol/documentation.yaml?branch=main&label=main%20docs)](https://abs0luty.github.io/axum-server-dual-protocol/axum_server_dual_protocol/index.html)
 
 ## Description
 
@@ -13,6 +17,15 @@ same port. See [`bind_dual_protocol()`].
 A common use case for this is if a HTTPS server is hosted on a non-traditional port, having no
 corresponding HTTP port. This can be an issue for clients who try to connect over HTTP and get a
 connection reset error. See [`ServerExt::set_upgrade()`].
+
+## Installation
+
+This fork is not published on crates.io under the upstream crate name, so depend on it through Git:
+
+```toml
+[dependencies]
+axum-server-dual-protocol = { git = "https://github.com/abs0luty/axum-server-dual-protocol" }
+```
 
 ## Usage
 
@@ -95,20 +108,20 @@ Unless you explicitly state otherwise, any contribution intentionally submitted 
 work by you, as defined in the Apache-2.0 license, shall be dual licensed as above, without any
 additional terms or conditions.
 
-[CHANGELOG]: https://github.com/daxpedda/axum-server-dual-protocol/blob/v0.8.0/CHANGELOG.md
-[LICENSE-MIT]: https://github.com/daxpedda/axum-server-dual-protocol/blob/v0.8.0/LICENSE-MIT
-[LICENSE-APACHE]: https://github.com/daxpedda/axum-server-dual-protocol/blob/v0.8.0/LICENSE-APACHE
+[CHANGELOG]: https://github.com/abs0luty/axum-server-dual-protocol/blob/main/CHANGELOG.md
+[LICENSE-MIT]: https://github.com/abs0luty/axum-server-dual-protocol/blob/main/LICENSE-MIT
+[LICENSE-APACHE]: https://github.com/abs0luty/axum-server-dual-protocol/blob/main/LICENSE-APACHE
 [`aws-lc-rs`]: https://docs.rs/aws-lc-rs/1
 [`axum`]: https://docs.rs/axum/0.8
 [`axum-server`]: https://docs.rs/axum-server/latest
 [`bind_dual_protocol()`]:
-	https://docs.rs/axum-server-dual-protocol/0.8.0/axum_server_dual_protocol/fn.bind_dual_protocol.html
+	https://abs0luty.github.io/axum-server-dual-protocol/axum_server_dual_protocol/fn.bind_dual_protocol.html
 [`CryptoProvider`]: https://docs.rs/rustls/0.23/rustls/crypto/struct.CryptoProvider.html
 [`hyper`]: https://docs.rs/hyper/1
 [`Layer`]: https://docs.rs/tower-layer/0.3/tower_layer/trait.Layer.html
 [`Router`]: https://docs.rs/axum/0.8/axum/struct.Router.html
 [`ServerExt::set_upgrade()`]:
-	https://docs.rs/axum-server-dual-protocol/0.8.0/axum_server_dual_protocol/trait.ServerExt.html#tymethod.set_upgrade
+	https://abs0luty.github.io/axum-server-dual-protocol/axum_server_dual_protocol/trait.ServerExt.html#tymethod.set_upgrade
 [`tower`]: https://docs.rs/tower/0.5
 [`UpgradeHttpLayer`]:
-	https://docs.rs/axum-server-dual-protocol/0.8.0/axum_server_dual_protocol/struct.UpgradeHttpLayer.html
+	https://abs0luty.github.io/axum-server-dual-protocol/axum_server_dual_protocol/struct.UpgradeHttpLayer.html
