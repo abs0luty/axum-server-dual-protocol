@@ -1,14 +1,13 @@
+[![License](https://img.shields.io/crates/l/axum-server-dual-protocol2)](https://github.com/abs0luty/axum-server-dual-protocol#license)
+[![Crates.io](https://img.shields.io/crates/v/axum-server-dual-protocol2)](https://crates.io/crates/axum-server-dual-protocol2)
+[![Docs](https://img.shields.io/crates/v/axum-server-dual-protocol2?color=blue&label=docs)](https://docs.rs/axum-server-dual-protocol2/)
+
 # axum-server-dual-protocol2
 
 > **Maintained fork.** Upstream
 > [`daxpedda/axum-server-dual-protocol`](https://github.com/daxpedda/axum-server-dual-protocol) is
 > unmaintained. This fork is published as `axum-server-dual-protocol2` (the upstream crate name is
 > taken) and tracks [`axum-server`] v0.9.
-
-[![Crates.io Version](https://img.shields.io/crates/v/axum-server-dual-protocol2.svg)](https://crates.io/crates/axum-server-dual-protocol2)
-[![Live Build Status](https://img.shields.io/github/check-runs/abs0luty/axum-server-dual-protocol/main?label=CI)](https://github.com/abs0luty/axum-server-dual-protocol/actions?query=branch%3Amain)
-[![Docs.rs Documentation](https://img.shields.io/docsrs/axum-server-dual-protocol2?label=docs.rs)](https://docs.rs/crate/axum-server-dual-protocol2)
-[![Main Documentation](https://img.shields.io/github/actions/workflow/status/abs0luty/axum-server-dual-protocol/documentation.yaml?branch=main&label=main%20docs)](https://docs.rs/axum-server-dual-protocol2/latest/axum_server_dual_protocol2/index.html)
 
 ## Description
 
