@@ -9,6 +9,13 @@ This is the maintained fork at
 [`abs0luty/axum-server-dual-protocol`](https://github.com/abs0luty/axum-server-dual-protocol). The
 upstream project is unmaintained.
 
+## [0.9.0]
+
+### Changed (breaking)
+
+- Renamed the library target to `axum_server_dual_protocol2` to match the package name, so import the
+  crate as `axum_server_dual_protocol2`. Everything else is unchanged from v0.8.0.
+
 ## [0.8.0]
 
 ### Added
@@ -23,8 +30,7 @@ upstream project is unmaintained.
 
 ### Changed
 
-- Published as `axum-server-dual-protocol2` because the upstream crate name is taken. The library
-  target is still named `axum_server_dual_protocol`, so existing `use` statements keep working.
+- Published as `axum-server-dual-protocol2` because the upstream crate name is taken.
 - Updated `axum-server` to v0.9.
 - Updated `axum` to v0.8.
 - Increased MSRV to v1.82.
@@ -139,7 +145,8 @@ upstream project is unmaintained.
 
 - Initial commit.
 
-[Unreleased]: https://github.com/abs0luty/axum-server-dual-protocol/compare/v0.8.0...main
+[Unreleased]: https://github.com/abs0luty/axum-server-dual-protocol/compare/v0.9.0...main
+[0.9.0]: https://github.com/abs0luty/axum-server-dual-protocol/compare/v0.8.0...v0.9.0
 [0.8.0]: https://github.com/abs0luty/axum-server-dual-protocol/compare/v0.7.0...v0.8.0
 [0.7.0]: https://github.com/abs0luty/axum-server-dual-protocol/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/abs0luty/axum-server-dual-protocol/compare/v0.5.2...v0.6.0

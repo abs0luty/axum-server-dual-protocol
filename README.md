@@ -3,15 +3,12 @@
 > **Maintained fork.** Upstream
 > [`daxpedda/axum-server-dual-protocol`](https://github.com/daxpedda/axum-server-dual-protocol) is
 > unmaintained. This fork is published as `axum-server-dual-protocol2` (the upstream crate name is
-> taken) and lives at
-> [`abs0luty/axum-server-dual-protocol`](https://github.com/abs0luty/axum-server-dual-protocol),
-> tracking [`axum-server`] v0.9. The library target keeps the name
-> `axum_server_dual_protocol`, so existing `use` statements work unchanged.
+> taken) and tracks [`axum-server`] v0.9.
 
 [![Crates.io Version](https://img.shields.io/crates/v/axum-server-dual-protocol2.svg)](https://crates.io/crates/axum-server-dual-protocol2)
 [![Live Build Status](https://img.shields.io/github/check-runs/abs0luty/axum-server-dual-protocol/main?label=CI)](https://github.com/abs0luty/axum-server-dual-protocol/actions?query=branch%3Amain)
 [![Docs.rs Documentation](https://img.shields.io/docsrs/axum-server-dual-protocol2?label=docs.rs)](https://docs.rs/crate/axum-server-dual-protocol2)
-[![Main Documentation](https://img.shields.io/github/actions/workflow/status/abs0luty/axum-server-dual-protocol/documentation.yaml?branch=main&label=main%20docs)](https://abs0luty.github.io/axum-server-dual-protocol/axum_server_dual_protocol/index.html)
+[![Main Documentation](https://img.shields.io/github/actions/workflow/status/abs0luty/axum-server-dual-protocol/documentation.yaml?branch=main&label=main%20docs)](https://docs.rs/axum-server-dual-protocol2/latest/axum_server_dual_protocol2/index.html)
 
 ## Description
 
@@ -26,12 +23,6 @@ connection reset error. See [`ServerExt::set_upgrade()`].
 
 ```bash
 cargo add axum-server-dual-protocol2
-```
-
-The library target is still called `axum_server_dual_protocol`, so existing code keeps compiling:
-
-```rust
-use axum_server_dual_protocol::bind_dual_protocol;
 ```
 
 ## Usage
@@ -52,7 +43,7 @@ let app = Router::new().route(
 // User-supplied certificate and private key.
 let config = RustlsConfig::from_der(certificate, private_key).await?;
 
-axum_server_dual_protocol::bind_dual_protocol(address, config)
+axum_server_dual_protocol2::bind_dual_protocol(address, config)
 	.serve(app.into_make_service())
 	.await?;
 ```
@@ -61,9 +52,9 @@ We now have a server accepting both HTTP and HTTPS requests! Now we can automati
 incoming HTTP requests to HTTPS using [`ServerExt::set_upgrade()`] like this:
 
 ```rust
-use axum_server_dual_protocol::ServerExt;
+use axum_server_dual_protocol2::ServerExt;
 
-axum_server_dual_protocol::bind_dual_protocol(address, config)
+axum_server_dual_protocol2::bind_dual_protocol(address, config)
 	.set_upgrade(true)
 	.serve(app.into_make_service())
 	.await?;
@@ -127,14 +118,14 @@ additional terms or conditions.
 [`axum`]: https://docs.rs/axum/0.8
 [`axum-server`]: https://docs.rs/axum-server/latest
 [`bind_dual_protocol()`]:
-	https://abs0luty.github.io/axum-server-dual-protocol/axum_server_dual_protocol/fn.bind_dual_protocol.html
+	https://docs.rs/axum-server-dual-protocol2/latest/axum_server_dual_protocol2/fn.bind_dual_protocol.html
 [`CryptoProvider`]: https://docs.rs/rustls/0.23/rustls/crypto/struct.CryptoProvider.html
 [`hyper`]: https://docs.rs/hyper/1
 [`Layer`]: https://docs.rs/tower-layer/0.3/tower_layer/trait.Layer.html
 [`ring`]: https://docs.rs/ring/0.17
 [`Router`]: https://docs.rs/axum/0.8/axum/struct.Router.html
 [`ServerExt::set_upgrade()`]:
-	https://abs0luty.github.io/axum-server-dual-protocol/axum_server_dual_protocol/trait.ServerExt.html#tymethod.set_upgrade
+	https://docs.rs/axum-server-dual-protocol2/latest/axum_server_dual_protocol2/trait.ServerExt.html#tymethod.set_upgrade
 [`tower`]: https://docs.rs/tower/0.5
 [`UpgradeHttpLayer`]:
-	https://abs0luty.github.io/axum-server-dual-protocol/axum_server_dual_protocol/struct.UpgradeHttpLayer.html
+	https://docs.rs/axum-server-dual-protocol2/latest/axum_server_dual_protocol2/struct.UpgradeHttpLayer.html

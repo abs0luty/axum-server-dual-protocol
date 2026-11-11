@@ -13,10 +13,7 @@ license = "MIT OR Apache-2.0"
 name = "axum-server-dual-protocol2"
 repository = "https://github.com/abs0luty/axum-server-dual-protocol"
 rust-version = "1.82"
-version = "0.8.0"
-
-[lib]
-name = "axum_server_dual_protocol"
+version = "0.9.0"
 
 [features]
 default = ["axum-server/tls-rustls"]

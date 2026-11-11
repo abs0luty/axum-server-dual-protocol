@@ -19,7 +19,7 @@
 //! ```no_run
 //! # use axum::{routing, Router};
 //! # use axum_server::tls_rustls::RustlsConfig;
-//! # use axum_server_dual_protocol::Protocol;
+//! # use axum_server_dual_protocol2::Protocol;
 //! # use http::Extensions;
 //! #
 //! # #[tokio::main]
@@ -42,7 +42,7 @@
 //! // User-supplied certificate and private key.
 //! let config = RustlsConfig::from_der(certificate, private_key).await?;
 //!
-//! axum_server_dual_protocol::bind_dual_protocol(address, config)
+//! axum_server_dual_protocol2::bind_dual_protocol(address, config)
 //! 	.serve(app.into_make_service())
 //! 	.await?;
 //! #
@@ -56,7 +56,7 @@
 //! ```no_run
 //! # use axum::{routing, Router};
 //! # use axum_server::tls_rustls::RustlsConfig;
-//! use axum_server_dual_protocol::ServerExt;
+//! use axum_server_dual_protocol2::ServerExt;
 //!
 //! # #[tokio::main]
 //! # async fn main() -> anyhow::Result<()> {
@@ -67,7 +67,7 @@
 //! # let certificate = vec![certificate.cert.der().to_vec()];
 //! # let config = RustlsConfig::from_der(certificate, private_key).await?;
 //! #
-//! axum_server_dual_protocol::bind_dual_protocol(address, config)
+//! axum_server_dual_protocol2::bind_dual_protocol(address, config)
 //! 	.set_upgrade(true)
 //! 	.serve(app.into_make_service())
 //! 	.await?;
@@ -79,7 +79,7 @@
 //! Alternatively [`UpgradeHttpLayer`] can be used:
 //! ```
 //! # use axum::{routing, Router};
-//! # use axum_server_dual_protocol::UpgradeHttpLayer;
+//! # use axum_server_dual_protocol2::UpgradeHttpLayer;
 //! let app = Router::new()
 //! 	.route("/", routing::get(|| async { "Hello, world!" }))
 //! 	.layer(UpgradeHttpLayer);

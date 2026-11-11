@@ -13,7 +13,7 @@ use std::net::SocketAddr;
 
 use anyhow::Result;
 use axum::{routing, Router};
-use axum_server_dual_protocol::{ServerExt, UpgradeHttpLayer};
+use axum_server_dual_protocol2::{ServerExt, UpgradeHttpLayer};
 use http::header::LOCATION;
 use reqwest::redirect::Policy;
 use reqwest::{Certificate, Client, StatusCode};

@@ -16,7 +16,7 @@ use std::net::SocketAddr;
 use anyhow::Result;
 use axum::{routing, Router};
 use axum_server::tls_rustls::RustlsConfig;
-use axum_server_dual_protocol::ServerExt;
+use axum_server_dual_protocol2::ServerExt;
 
 #[tokio::main]
 async fn main() -> Result<()> {
@@ -35,7 +35,7 @@ async fn main() -> Result<()> {
 	)
 	.await?;
 
-	axum_server_dual_protocol::bind_dual_protocol(address, config)
+	axum_server_dual_protocol2::bind_dual_protocol(address, config)
 		.set_upgrade(true)
 		.serve(app.into_make_service())
 		.await?;

@@ -6,7 +6,7 @@ use anyhow::{Error, Result};
 use axum::{Router, ServiceExt};
 use axum_server::tls_rustls::RustlsConfig;
 use axum_server::{Handle, Server};
-use axum_server_dual_protocol::DualProtocolAcceptor;
+use axum_server_dual_protocol2::DualProtocolAcceptor;
 use bytes::Bytes;
 use futures_util::{future, TryFutureExt};
 use http::{Request, Response};
@@ -41,7 +41,7 @@ pub(crate) fn server(
 	address: SocketAddr,
 	config: RustlsConfig,
 ) -> Result<Server<SocketAddr, DualProtocolAcceptor>> {
-	Ok(axum_server_dual_protocol::bind_dual_protocol(
+	Ok(axum_server_dual_protocol2::bind_dual_protocol(
 		address, config,
 	))
 }

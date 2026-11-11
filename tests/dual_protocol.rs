@@ -9,7 +9,7 @@ use std::sync::Arc;
 use anyhow::Result;
 use axum::{routing, Router};
 use axum_server::tls::TlsInfo;
-use axum_server_dual_protocol::Protocol;
+use axum_server_dual_protocol2::Protocol;
 use http::Extensions;
 use reqwest::Client;
 
@@ -44,7 +44,7 @@ async fn from_tcp() -> Result<()> {
 	util::test(
 		|address, config| {
 			let listener = TcpListener::bind(address)?;
-			Ok(axum_server_dual_protocol::from_tcp_dual_protocol(
+			Ok(axum_server_dual_protocol2::from_tcp_dual_protocol(
 				listener, config,
 			)?)
 		},
